@@ -13,7 +13,7 @@
         <relationship name="tasks" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="images" inverseEntity="Task"/>
     </entity>
     <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
-        <attribute name="checked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="checked" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="dateCrea" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateMaj" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="description_" optional="YES" attributeType="String"/>
