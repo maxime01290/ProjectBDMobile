@@ -19,18 +19,19 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longClick(index:Int)))
         
-       // tasks = fetchItems()
+        tasks = fetchItems()
+    }
+    
+
+    @objc func longClick(indexPath:Int){
+        tasks[indexPath].checked.toggle()
+        saveContext()
     }
     
     private func fetchItems(searchQuery: String? = nil) -> [Task] {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-
-//        let dateSortDescriptor = NSSortDescriptor(keyPath: \Task.dateCrea, ascending: false)
-//        let titleSortDescriptor = NSSortDescriptor(keyPath: \Task.title, ascending: true)
-//
-//        fetchRequest.sortDescriptors = [dateSortDescriptor, titleSortDescriptor]
-
 //        if let searchQuery = searchQuery, !searchQuery.isEmpty {
 //            let predicate = NSPredicate(format: "%K contains[cd] %@",
 //                                        argumentArray: [#keyPath(Task.title), searchQuery])
@@ -103,7 +104,6 @@ class ViewController: UITableViewController {
         cell.accessoryType = task.checked ? .checkmark : .none
         cell.textLabel?.text = task.title
         cell.detailTextLabel?.text = task.description_
-        //cell.detailTextLabel?.text = DateFormatter.localizedString(from: task.dateCrea!, dateStyle: .medium, timeStyle: .short)
         return cell
     }
     
@@ -128,13 +128,21 @@ class ViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tasks[indexPath.row].checked.toggle()
-        saveContext()
+
 
         guard let cell = tableView.cellForRow(at: indexPath) else {
             return
         }
 
         cell.accessoryType = tasks[indexPath.row].checked ? .checkmark : .none
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let destination = segue.destination as? DetailsViewController {
+//        let addController = destination.topViewController as! DetailsViewController
+        if let destination = segue.destination as? DetailsViewController,
+           segue.identifier == "detailsTask" {
+            destination.task = tasks[tableView.indexPath(for: sender as! UITableViewCell)!.row]
+        }
     }
 }
