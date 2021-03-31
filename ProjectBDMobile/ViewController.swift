@@ -18,25 +18,16 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(longClick(index:Int)))
-        
-        tasks = fetchItems()
-    }
     
-
-    @objc func longClick(indexPath:Int){
-        tasks[indexPath].checked.toggle()
-        saveContext()
+        tasks = fetchItems()
     }
     
     private func fetchItems(searchQuery: String? = nil) -> [Task] {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
-//        if let searchQuery = searchQuery, !searchQuery.isEmpty {
-//            let predicate = NSPredicate(format: "%K contains[cd] %@",
-//                                        argumentArray: [#keyPath(Task.title), searchQuery])
-//            fetchRequest.predicate = predicate
-//        }
+        
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        let sortDescriptor2 = NSSortDescriptor(key: "dateCrea", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor, sortDescriptor2]
 
         do {
             return try self.managedContext.fetch(fetchRequest)
@@ -47,51 +38,6 @@ class ViewController: UITableViewController {
     
     private func saveContext() {
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-    
-    @IBAction func addTask(_ sender: Any) {
-        let alertController = UIAlertController(title: "Nouvelle tâche",
-                                                message: "Ajouter une tâche à la liste",
-                                                preferredStyle: .alert)
-
-        alertController.addTextField { (textFieldTitle) in
-            textFieldTitle.placeholder = "Votre titre …"
-        }
-        
-        alertController.addTextField { (textFieldDescription) in
-            textFieldDescription.placeholder = "Votre description …"
-        }
-
-        let cancelButton = UIAlertAction(title: "Annuler",
-                                         style: .cancel,
-                                         handler: nil)
-
-        let saveButton = UIAlertAction(title: "Ajouter",
-                                       style: .default) { _ in
-            guard let textFieldTitle = alertController.textFields?[0],
-                  let textFieldDescription = alertController.textFields?[1]
-            else {
-                return
-            }
-
-            self.createTask(title: textFieldTitle.text!, description: textFieldDescription.text!)
-            self.tasks = self.fetchItems()
-            self.tableView.reloadData()
-        }
-
-        alertController.addAction(saveButton)
-        alertController.addAction(cancelButton)
-
-        present(alertController, animated: true)
-    }
-    
-    private func createTask(title: String, description:String, date: Date = Date()) {
-        let task = Task(context: managedContext)
-        task.title = title
-        task.description_ = description
-        task.dateCrea = date
-
-        saveContext()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -126,20 +72,8 @@ class ViewController: UITableViewController {
 
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-
-        guard let cell = tableView.cellForRow(at: indexPath) else {
-            return
-        }
-
-        cell.accessoryType = tasks[indexPath.row].checked ? .checkmark : .none
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? DetailsViewController {
-//        let addController = destination.topViewController as! DetailsViewController
         if let destination = segue.destination as? DetailsViewController,
            segue.identifier == "detailsTask" {
             destination.task = tasks[tableView.indexPath(for: sender as! UITableViewCell)!.row]

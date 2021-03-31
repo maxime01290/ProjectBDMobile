@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Categorie" representedClassName="Categorie" syncable="YES" codeGenerationType="class">
         <attribute name="dateCrea" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateMaj" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="nom" optional="YES" attributeType="String"/>
-        <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="categories" inverseEntity="Task"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="categories" inverseEntity="Task"/>
     </entity>
     <entity name="Image" representedClassName="Image" syncable="YES" codeGenerationType="class">
-        <attribute name="data" optional="YES" attributeType="String"/>
+        <attribute name="data" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="dateCrea" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dateMaj" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="tasks" toMany="YES" deletionRule="Cascade" destinationEntity="Task" inverseName="images" inverseEntity="Task"/>
@@ -18,12 +18,12 @@
         <attribute name="dateMaj" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="description_" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categorie" inverseName="categories" inverseEntity="Categorie"/>
+        <relationship name="categories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categorie" inverseName="tasks" inverseEntity="Categorie"/>
         <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="tasks" inverseEntity="Image"/>
     </entity>
     <elements>
-        <element name="Task" positionX="-54" positionY="-9" width="128" height="134"/>
-        <element name="Categorie" positionX="-36" positionY="45" width="128" height="89"/>
-        <element name="Image" positionX="-18" positionY="72" width="128" height="89"/>
+        <element name="Categorie" positionX="61.36199951171875" positionY="-83.18563842773438" width="128" height="103"/>
+        <element name="Image" positionX="29.57586669921875" positionY="109.2044372558594" width="128" height="89"/>
+        <element name="Task" positionX="-150.914794921875" positionY="-110.6394195556641" width="128" height="134"/>
     </elements>
 </model>

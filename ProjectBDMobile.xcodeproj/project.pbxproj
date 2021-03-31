@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0850D49526145E3D0061624B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E323BA25E63F1900F716F7 /* Main.storyboard */; };
+		0850D499261464C10061624B /* DetailsCategorieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0850D498261464C10061624B /* DetailsCategorieController.swift */; };
+		0866066A2608E616007A3B45 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 086606692608E616007A3B45 /* Base.lproj */; };
+		0897A77B26149BE0005A31BA /* ProjectBDMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0866066C2608E653007A3B45 /* ProjectBDMobile.xcdatamodeld */; };
 		08AA7A6125EF97A0002CB82E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AA7A6025EF979F002CB82E /* DetailsViewController.swift */; };
 		08E323B525E63F1900F716F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E323B425E63F1900F716F7 /* AppDelegate.swift */; };
 		08E323B725E63F1900F716F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E323B625E63F1900F716F7 /* SceneDelegate.swift */; };
 		08E323B925E63F1900F716F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E323B825E63F1900F716F7 /* ViewController.swift */; };
-		08E323BC25E63F1900F716F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E323BA25E63F1900F716F7 /* Main.storyboard */; };
-		08E323BF25E63F1900F716F7 /* ProjectBDMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08E323BD25E63F1900F716F7 /* ProjectBDMobile.xcdatamodeld */; };
 		08E323C125E63F1A00F716F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08E323C025E63F1A00F716F7 /* Assets.xcassets */; };
 		08E323C425E63F1A00F716F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E323C225E63F1A00F716F7 /* LaunchScreen.storyboard */; };
 		08E323CD25E66AEE00F716F7 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E323CC25E66AEE00F716F7 /* CategoryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0850D498261464C10061624B /* DetailsCategorieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCategorieController.swift; sourceTree = "<group>"; };
+		086606692608E616007A3B45 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		0866066D2608E653007A3B45 /* ProjectBDMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectBDMobile.xcdatamodel; sourceTree = "<group>"; };
 		08AA7A6025EF979F002CB82E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		08E323B125E63F1900F716F7 /* ProjectBDMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectBDMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E323B425E63F1900F716F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08E323B625E63F1900F716F7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		08E323B825E63F1900F716F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08E323BB25E63F1900F716F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		08E323BE25E63F1900F716F7 /* ProjectBDMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProjectBDMobile.xcdatamodel; sourceTree = "<group>"; };
 		08E323C025E63F1A00F716F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08E323C325E63F1A00F716F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08E323C525E63F1A00F716F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,9 +73,11 @@
 				08E323C025E63F1A00F716F7 /* Assets.xcassets */,
 				08E323C225E63F1A00F716F7 /* LaunchScreen.storyboard */,
 				08E323C525E63F1A00F716F7 /* Info.plist */,
-				08E323BD25E63F1900F716F7 /* ProjectBDMobile.xcdatamodeld */,
 				08E323CC25E66AEE00F716F7 /* CategoryController.swift */,
 				08AA7A6025EF979F002CB82E /* DetailsViewController.swift */,
+				0866066C2608E653007A3B45 /* ProjectBDMobile.xcdatamodeld */,
+				086606692608E616007A3B45 /* Base.lproj */,
+				0850D498261464C10061624B /* DetailsCategorieController.swift */,
 			);
 			path = ProjectBDMobile;
 			sourceTree = "<group>";
@@ -135,7 +141,8 @@
 			files = (
 				08E323C425E63F1A00F716F7 /* LaunchScreen.storyboard in Resources */,
 				08E323C125E63F1A00F716F7 /* Assets.xcassets in Resources */,
-				08E323BC25E63F1900F716F7 /* Main.storyboard in Resources */,
+				0866066A2608E616007A3B45 /* Base.lproj in Resources */,
+				0850D49526145E3D0061624B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,11 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0850D499261464C10061624B /* DetailsCategorieController.swift in Sources */,
 				08E323B925E63F1900F716F7 /* ViewController.swift in Sources */,
 				08E323CD25E66AEE00F716F7 /* CategoryController.swift in Sources */,
-				08E323BF25E63F1900F716F7 /* ProjectBDMobile.xcdatamodeld in Sources */,
 				08E323B525E63F1900F716F7 /* AppDelegate.swift in Sources */,
 				08E323B725E63F1900F716F7 /* SceneDelegate.swift in Sources */,
+				0897A77B26149BE0005A31BA /* ProjectBDMobile.xcdatamodeld in Sources */,
 				08AA7A6125EF97A0002CB82E /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,14 +363,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		08E323BD25E63F1900F716F7 /* ProjectBDMobile.xcdatamodeld */ = {
+		0866066C2608E653007A3B45 /* ProjectBDMobile.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				08E323BE25E63F1900F716F7 /* ProjectBDMobile.xcdatamodel */,
+				0866066D2608E653007A3B45 /* ProjectBDMobile.xcdatamodel */,
 			);
-			currentVersion = 08E323BE25E63F1900F716F7 /* ProjectBDMobile.xcdatamodel */;
+			currentVersion = 0866066D2608E653007A3B45 /* ProjectBDMobile.xcdatamodel */;
 			path = ProjectBDMobile.xcdatamodeld;
 			sourceTree = "<group>";
+			usesTabs = 0;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
